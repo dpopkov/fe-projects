@@ -8,20 +8,45 @@
   <body>
     <h1>Text Input Attributes</h1>
 
+    <!-- When the form is submitted without specified action, 
+      then method GET is used by default -->
     <form>
       <div>
         <label for="name">Name</label>
-        <input type="text" id="name" />
+        <input
+          type="text"
+          id="name"
+          value="Jane Doe"
+          placeholder="Enter name"
+          name="name"
+          required
+          minlength="3"
+          maxlength="10"
+        />
       </div>
       <br />
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+          value="user@example.com"
+          disabled
+        />
       </div>
       <br />
       <div>
         <label for="password">password</label>
-        <input type="password" id="password" />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter password"
+          name="password"
+          required
+          minlength="8"
+        />
       </div>
       <br />
       <div>
