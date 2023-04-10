@@ -5,5 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandbox: Form Challenge</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Apartment Search</h1>
+    </header>
+    <main>
+      <form>
+        <div>
+          <label for="location">Location</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Enter location"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="monthlyPrice">Monthly Price</label>
+          <input
+            type="range"
+            name="monthlyPrice"
+            id="monthlyPrice"
+            min="0"
+            max="100000"
+            step="5000"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="numberOfBedrooms">Number of Bedrooms</label>
+          <input
+            type="number"
+            name="numberOfBedrooms"
+            id="numberOfBedrooms"
+            min="1"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="numberOfBathrooms">Number of Bathrooms</label>
+          <input
+            type="number"
+            name="numberOfBathrooms"
+            id="numberOfBathrooms"
+            min="0"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="petsAllowed">
+            Pets Allowed
+            <input type="checkbox" name="petsAllowed" id="petsAllowed" />
+          </label>
+        </div>
+        <br />
+        <div>
+          <label for="dateAvailable">Date Available</label>
+          <input type="date" name="dateAvailable" id="dateAvailable" />
+        </div>
+        <br />
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </main>
+  </body>
 </html>
