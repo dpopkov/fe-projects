@@ -1,0 +1,24 @@
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #888;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    background-color: blueviolet;
+}
+
+a:focus {
+    background-color: yellow;
+}
+
+a:visited {
+    color: coral;
+}
