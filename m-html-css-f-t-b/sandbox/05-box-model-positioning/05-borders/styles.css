@@ -12,4 +12,35 @@ body {
     max-width: 400px;
     margin: 20px;
     padding: 15px;
+
+    /* Shorthand */
+    border: 2px solid black;
+
+    /* Overriding above */
+    border-width: 2px;
+    border-style: dashed;
+    border-color: red;
+}
+
+.box-1 {
+    border: none;
+    border-top: solid blue 4px;
+    border-bottom: solid red 4px;
+}
+
+.box-2 {
+    background-color:bisque;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.box-circled {
+    max-width: 180px;
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.box-3 {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 40px;
 }
