@@ -7,3 +7,30 @@
 body {
     font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
 }
+
+.none-el {
+    display: none;
+}
+
+.hidden-el {
+    visibility: hidden;
+}
+
+/* p {
+    display: inline;
+}
+
+a {
+    display: block;
+    margin: 10px;
+} */
+
+a {
+    display: inline-block;
+    background-color: lightblue;
+    border: solid 1px blue;
+    padding: 10px;
+    margin: 20px 10px;
+    width: 200px;
+    height: 100px;
+}
