@@ -8,3 +8,56 @@ body {
     font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
 }
 
+.box {
+    border: solid 1px darkgray;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-1 {
+    /* Default position is static */
+    position: static;
+    left: 50px; /* It doesn't do anything */
+}
+
+.box-2 {
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+
+.box-3 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.box-4 {
+    /* Sticky is the combination of relative and fixed */
+    position: sticky; 
+    top: 300px;
+    z-index: 3;
+}
+
+.box-5 {
+    position: relative;
+    border: solid 2px lightgreen;
+    width: 300px;
+    height: 300px;
+    background-color: coral;
+    z-index: 1;
+}
+
+.box-6 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    height: 120px;
+}
