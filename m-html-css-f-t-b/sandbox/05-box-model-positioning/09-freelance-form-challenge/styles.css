@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 400px;
+    margin: 150px auto;
+}
+
+.card {
+    background-color: rgb(99, 112, 112);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 60px 50px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.card p {
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.card .form-group {
+    margin-bottom: 20px;
+}
+
+.f-input {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: large;
+    border: none;
+}
+
+.card input[type="text"] {  
+    background-color: #f1f1f1;
+}
+
+.card button {
+    background: linear-gradient(90deg,rgba(242, 132, 62, 1) 21%, rgba(239, 111, 69, 1) 61%);
+    color: white;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: linear-gradient(90deg,rgba(232, 132, 62, 1) 21%, rgba(229, 111, 69, 1) 61%);
+}
