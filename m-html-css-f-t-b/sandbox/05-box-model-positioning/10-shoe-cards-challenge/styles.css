@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, sans-serif;
+    background-color: #d9e2e8;
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    padding: 20px 20px 30px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Heading colors */
+.card-1 h1 {
+    color: red;
+}
+
+.card-2 h1 {
+    color: blue;
+}
+
+.card-3 h1 {
+    color: darkred;
+}
+
+.card a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.card a:hover {
+    opacity: 0.7;
+}
+
+/* Link colors */
+.card-1 a {
+    background-color: red;
+}
+
+.card-2 a {
+    background-color: blue;
+}
+
+.card-3 a {
+    background-color: darkred;
+}
+
+/* Backgrounds */
+.card-1 {
+    background: #fff url('./images/sporty.png') no-repeat center right/200px;
+}
+
+.card-2 {
+    background: #fff url('./images/casual.png') no-repeat center right/200px;
+}
+
+.card-3 {
+    background: #fff url('./images/formal.png') no-repeat center right/200px;
+}
