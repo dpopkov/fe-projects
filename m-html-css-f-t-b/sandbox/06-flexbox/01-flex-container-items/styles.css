@@ -7,3 +7,20 @@
 body {
     font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
 }
+
+.flex-container {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+.flex-item {
+    height: 200px;
+    width: 200px;
+    background-color: coral;
+    border: 1px solid;
+}
