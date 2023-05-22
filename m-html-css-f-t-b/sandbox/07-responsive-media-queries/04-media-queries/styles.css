@@ -7,3 +7,47 @@
 body {
     font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
 }
+
+/* @media screen and (min-width: 1200px) { */
+@media screen and (max-width: 1200px) {
+    .widescreen {
+        background-color: coral;
+    }
+}
+
+/* Сокращенная форма записи */
+@media(max-width: 992px) {
+    .normal {
+        background-color: lightblue;
+    }
+}
+
+@media(max-width: 768px) {
+    .tablet {
+        background-color: lightgreen;
+    }
+}
+
+@media(max-width: 576px) {
+    .smartphone {
+        background-color: lightcoral;
+    }
+}
+
+@media(orientation: landscape) {
+    .landscape {
+        background-color: lightgoldenrodyellow;
+    }
+}
+
+@media(max-height: 500px) {
+    .height {
+        background-color: lightseagreen;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        background-color: #333;
+    }
+}
