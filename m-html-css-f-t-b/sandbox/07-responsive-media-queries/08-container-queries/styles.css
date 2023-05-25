@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    display: flex;
+}
+
+main {
+    container-type: inline-size; /* подобно media width */
+    container-name: main;
+    /* max-width: 1100px; */
+    width: 100%; /* для демо container name */
+    margin: 30px auto;
+    padding: 20px;
+}
+
+p {
+    padding: 2rem;
+}
+
+main p {
+    background-color: lightgreen;
+}
+
+aside {
+    container-type: inline-size;
+    container-name: aside;
+    flex: 0 0 30%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Использование имени контейнера: main */
+@container main (max-width: 992px) {
+    main p {
+        background-color: lightblue;
+    }
+}
+
+/* Использование имени контейнера: aside */
+@container aside (max-width: 300px) {
+    aside p {
+        background-color: lightgreen;
+    }
+}
