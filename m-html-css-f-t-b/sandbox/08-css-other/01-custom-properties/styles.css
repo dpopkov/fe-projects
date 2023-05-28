@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+/* Переменные лучше размещать сразу после reset. */
+:root {
+    --container-width: 800px;
+    --container-width-large: 1100px;
+    --primary-color: lightblue;
+    --secondary-color: lightcoral;
+    --tertiary-color: lightgreen;
+    --shadow-opacity: 0.3;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* .container {
+    --primary-color: lightblue;
+} */
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: var(--container-width);
+    margin: 30px auto;
+}
+
+.container-lg {
+    max-width: var(--container-width-large);
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,var(--shadow-opacity));
+}
+
+.box-1 {
+    background-color: var(--primary-color);
+}
+.box-2 {
+    background-color: var(--secondary-color);
+}
+.box-3 {
+    background-color: var(--tertiary-color);
+}
