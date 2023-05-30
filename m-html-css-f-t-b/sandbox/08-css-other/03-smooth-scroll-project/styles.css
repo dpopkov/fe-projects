@@ -6,7 +6,13 @@
 }
 
 :root {
-    --header-gradient: linear-gradient(45deg, #f00, #00f)
+    --header-gradient: linear-gradient(45deg, #f00, #00f);
+    --header-opagueness: 0.6;
+    --header-gradient-transparent: linear-gradient(
+        45deg, 
+        rgba(255, 0, 0, var(--header-opagueness)), 
+        rgba(0, 0, 255, var(--header-opagueness))
+    );
 }
 
 html {
@@ -40,6 +46,14 @@ img {
     color: white;
     padding: 10px 0;
     margin-bottom: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header.transparent {
+    background: var(--header-gradient-transparent);
+    padding: 30px 0;
 }
 
 .header .menu ul {
