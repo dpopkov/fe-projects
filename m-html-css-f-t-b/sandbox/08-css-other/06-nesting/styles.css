@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: lightcoral;
+    height: 100vh;
+    padding: 0 20px;
+
+    h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 2rem;
+        margin: 25px 0;
+
+        a {
+            color: white;
+            font-weight: bold;
+
+            &:hover {
+                color: lightseagreen;
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section {
+    margin: 50px 0;
+
+    .card {
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        border-radius: 10px;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 30vh;
+
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+    }
+}
