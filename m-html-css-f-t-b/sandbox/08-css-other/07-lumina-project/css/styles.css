@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
 }
 
 :root {
@@ -91,6 +91,25 @@ img {
     font-weight: normal;
 }
 
+/* Gallery */
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.gallery-item {
+    width: calc(33.333% - 20px);
+}
+.gallery-item:hover {
+    opacity: 0.8;
+}
+
+.gallery-item img {
+    border-radius: 10px;
+}
+
 /* Media Query */
 @media (max-width: 500px) {
     .header .header-flex {
@@ -104,5 +123,8 @@ img {
 
     .hero h2 {
         font-size: 1.8rem;
+    }
+    .gallery-item {
+        width: calc(50% - 20px);
     }
 }
