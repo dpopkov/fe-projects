@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Custom Variables */
+:root {
+    --bg-color: deepskyblue;
+}
+
+/* Utility Classes */
+.btn {
+    background-color: var(--bg-color);
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(12, 127, 165);
+}
+
+/* Nav */
+nav .main-menu {
+    background-color: var(--bg-color);
+    padding: 1rem;
+}
+
+nav .main-menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: white;
+}
+.main-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+.container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Select by type attribute */
+
+/* Select by name attribute */
+
+/* Select text type and id of name */
+
+/* Select required inputs */
+
+/* Select password with a maxlength of 8 */
+
+/* Select button with type of submit */
+
+/* Select only links that have a href attribute starting with # */
+
+/* Select only links that have a href attribute ending with .com */
