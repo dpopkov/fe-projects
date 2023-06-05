@@ -75,17 +75,48 @@ textarea {
 }
 
 /* Select by type attribute */
+input[type='email'] {
+    border-color: green;
+    border-width: 2px;
+}
 
 /* Select by name attribute */
+input[name='name'] {
+    border-color: blue;
+    border-width: 2px;
+}
 
 /* Select text type and id of name */
+input[type='text'][id='name'] {
+    background-color: lightblue;
+}
 
 /* Select required inputs */
+input[required] {
+    border-color: red;
+}
 
 /* Select password with a maxlength of 8 */
+input[type='password'][maxlength='8'] {
+    background-color: aquamarine;
+}
 
 /* Select button with type of submit */
+button[type='submit'] {
+    background-color: blueviolet;
+}
 
 /* Select only links that have a href attribute starting with # */
+a[href^='#'] {
+    color: green;
+}
 
 /* Select only links that have a href attribute ending with .com */
+a[href$='.com'] {
+    color: crimson;
+}
+
+/* Select only links that have a href attribute containing linux */
+a[href*='linux'] {
+    text-decoration: underline;
+}
