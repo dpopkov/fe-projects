@@ -10,6 +10,10 @@ body {
     line-height: 1.6rem;
 }
 
+h1 {
+    margin-bottom: 1rem;
+}
+
 label {
     display: block;
 }
@@ -27,4 +31,51 @@ p {
 input {
     width: 100%;
     padding: 0.5rem;
+}
+
+p::first-letter {
+    font-size: 2rem;
+    color: rebeccapurple;
+    padding-right: 2px;
+    font-weight: bold;
+}
+
+p::first-line {
+    color: purple;
+}
+
+p::selection {
+    color: red;
+    background-color: yellow;
+}
+
+input:required {
+    border-color: red;
+}
+
+input[required] {
+    background-color: antiquewhite;
+}
+
+input::placeholder {
+    color: purple;
+    font-weight: bold;
+}
+
+input::file-selector-button {
+    font-weight: bold;
+    color: dodgerblue;
+    background-color: white;
+    padding: 0.5rem 2rem;
+    border: thin solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input::file-selector-button:hover {
+    background-color: cornsilk;
+}
+
+li::marker {
+    content: '👉 ';
 }
