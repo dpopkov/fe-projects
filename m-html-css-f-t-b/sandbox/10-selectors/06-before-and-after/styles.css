@@ -1,4 +1,6 @@
-* {
+*,
+*::before, /* Reset все before и after превдо-элементы */
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,4 +30,28 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     position: relative;
+}
+
+h2::before {
+    content: 'Hello';
+    color: red;
+    margin-right: 0.5rem;
+}
+
+label.is-required::after {
+    content: '*';
+    color: red;
+    margin-left: 0.2rem;
+    font-size: 1.2rem;
+}
+
+/* Добавления стилей к элементу, которые применяются за его пределами */
+h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 200px;
+    background-color: hotpink;
 }
