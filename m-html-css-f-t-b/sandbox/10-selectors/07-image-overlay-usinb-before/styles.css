@@ -1,0 +1,78 @@
+*,
+*::before, /* Reset все before и after превдо-элементы */
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero {
+    height: 100%;
+    background: url('./background.jpg') center/cover no-repeat;
+    color: white;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero .btn {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    background: #333;
+    opacity: 0.7;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero .btn:hover {
+    opacity: 1;
+}
+
+/* Image Overlay */
+/*.hero::after { */  /* Text goes before */
+.hero::before {  /* Text goes behind */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* goes after image */
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
