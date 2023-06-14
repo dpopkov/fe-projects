@@ -15,4 +15,43 @@ body {
     max-width: 600px;
     margin: 30px auto;
 }
-  
+
+/*
+.container h1,
+.container h2,
+.container p {
+    color: red;
+}
+-- is the same as: */
+
+.container :is(h1, h2, p) {
+    color: red;
+}
+/* "is()" selects an element if it matches any of
+the selectors inside the parenthesis */
+
+a:is(:hover, :focus) {
+    background-color: pink;
+}
+
+/* "where()" is same as "is()" but has lower specificity. */
+/* Does not work because of lower specificity.
+ You need to comment out the :is(h1, h2, p) selector. */
+.container :where(h1, h2, p) {
+    color: green;
+}
+
+/* "has()" selects an element based on its children. */
+/* If the container has h1 with a span in it
+then make the whole container blueviolet */
+/* It has even lower specificity than :where() */
+.container:has(h1 span) {
+    color: blueviolet;
+}
+
+/* If the h1 has adjacent h2 in it
+the make h1 darkorange.
+It has low specificity. */
+h1:has(+ h2) {
+    color: darkorange;
+}
