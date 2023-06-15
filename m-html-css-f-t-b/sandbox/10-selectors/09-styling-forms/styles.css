@@ -7,7 +7,102 @@
     /* border: 1px solid #aaa; */
 }
 
-body {
-    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+:root {
+    --primary-color: #007bff;
 }
 
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea {
+    height: 100px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+    background-color: #f4f4f4;
+}
+
+input[type='submit'] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+input[type='submit']:hover {
+    background-color: #0056b3;
+}
+
+/* Изменение стиля всей формы, когда фокус на одном
+из элементов внутри формы. */
+form:focus-within {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+
+/* Стиль для ввода при отображаемом placeholder,
+пока не начали вводить текст. */
+input:placeholder-shown,
+textarea:placeholder-shown {
+    height: 50px;
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: red;
+}
+
+input:valid,
+textarea:valid {
+    border-color: green;
+}
