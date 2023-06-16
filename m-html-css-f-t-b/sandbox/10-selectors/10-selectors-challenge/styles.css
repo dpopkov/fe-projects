@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+:root {
+    --header-gradient: linear-gradient(45deg, #f00, #00f);
+    --header-opagueness: 0.6;
+    --header-gradient-transparent: linear-gradient(
+        45deg, 
+        rgba(255, 0, 0, var(--header-opagueness)), 
+        rgba(0, 0, 255, var(--header-opagueness))
+    );
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    background: var(--header-gradient) ;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header.transparent {
+    background: var(--header-gradient-transparent);
+    padding: 30px 0;
+}
+
+.header .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.header .menu a {
+    color: white;
+}
+
+.header .menu a:hover {
+    color: #f00;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 30px 0;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    background: var(--header-gradient);
+    color: white;
+    font-size: 2rem;
+}
+
+.section#home {
+    margin-bottom: 100px;
+}
+
+/* 1. Make the background color for the first paragraph in all sections lightyellow */
+
+/* 2. Alternate background colors for all lis #eee and #ddd */
+
+/* 3. Make the background #f4f4f4 and the padding 20px for all sections that have an image */
+
+/* 4. Make the first paragraph after a ul have the background #333, text color #fff and padding of 20px  */
+
+/* 5. Make the color of any links that start with http:// or https:// red  */
+
+/* 6. Make the first link in the first paragraph and the second paragraph of the second section bold */
