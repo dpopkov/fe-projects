@@ -13,6 +13,7 @@ body {
     max-width: 1100px;
     margin: 30px auto;
     background: #f4f4f4;
+    height: 600px;
 }
   
 .item {
@@ -26,5 +27,42 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(3, 100px);
+
+    /* justify-content: 
+       Aligns the grid along the row axis. */
+    /* justify-content: center; */
+    /* justify-content: end; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+
+    /* justify-items: 
+       Aligns the items inside the grid along the row axis. */
+    /* justify-items: center; */
+    /* justify-items: end; */
+    /* justify-items: stretch; */
+
+    /* align-items: 
+       Aligns the items inside the grid along the column axis. */
+    /* align-items: start; */
+    /* align-items: center; */
+    /* align-items: end; */
+    /* align-items: stretch; */
+
+    /* align-content: 
+       Aligns the grid along the row axis. */
+    /* align-content: start; */
+    /* align-content: end; */
+    /* align-content: center; */
+    /* align-content: space-between; */
+    /* align-content: space-around; */
+
+    /* place-content: 
+       A shorthand for both `align-content` and `justify-content`. */
+    place-content: space-between;
+
+    /* place-items: 
+       A shorthand for both `align-items` and `justify-items`. */
+    place-items: center;
 }
 
