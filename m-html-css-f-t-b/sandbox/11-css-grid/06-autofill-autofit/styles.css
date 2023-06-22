@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+   max-width: 800px;
+   margin: 30px auto;
+   background-color: #f4f4f4;
+}
+
+.item {
+   background-color: coral;
+   border: 1px solid #333;
+   padding: 1rem;
+   text-align: center;
+}
+
+/* auto-fit and auto-fill are used to create a grid with 
+a dynamic number of columns 
+and they are useful if you don't know how many items 
+are in the grid. */
+.item-grid {
+   display: grid;
+   /* grid-template-columns: repeat(auto-fit, 100px); */
+   /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+   /* auto-fill will leave the space */
+   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+   /* auto-fit will stretch out */
+   /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+}
