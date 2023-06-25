@@ -12,12 +12,15 @@ body {
 .container {
     display: grid;
     min-height: 100vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
 }
 
 header {
     background-color: #333;
     color: white;
     padding: 1rem;
+    grid-column: span 2;
 }
 
 nav {
@@ -46,4 +49,5 @@ footer {
     background-color: #777;
     color: white;
     padding: 1rem;
+    grid-column: span 2;
 }
