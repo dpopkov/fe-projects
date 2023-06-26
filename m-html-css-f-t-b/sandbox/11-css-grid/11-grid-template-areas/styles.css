@@ -12,38 +12,64 @@ body {
 .container {
     display: grid;
     gap: 1rem;
+    grid-template-areas: 
+        'header header search'
+        'nav nav nav'
+        'main main aside'
+        'footer footer footer';
 }
 
 header {
     background-color: #333;
     color: white;
     padding: 1rem;
+    grid-area: header;
 }
 
 nav {
     background-color: #444;
     color: white;
     padding: 1rem;
+    grid-area: nav;
 }
 
 .search {
     background-color: #777;
     color: white;
     padding: 1rem;
+    grid-area: search;
 }
 
 main {
     background-color: #f0f0f0;
     padding: 1rem;
+    grid-area: main;
 }
 
 aside {
     background-color: #ddd;
     padding: 1rem;
+    grid-area: aside;
 }
 
 footer {
     background-color: #777;
     color: white;
     padding: 1rem;
+    grid-area: footer;
 }
+
+@media (max-width: 500px) {
+    .container {
+        display: grid;
+        gap: 1rem;
+        grid-template-areas: 
+            'header'
+            'search'
+            'nav'
+            'main'
+            'aside'
+            'footer';
+    }
+}
+   
