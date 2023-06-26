@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+}
+
+.search {
+    background-color: #777;
+    color: white;
+    padding: 1rem;
+}
+
+main {
+    background-color: #f0f0f0;
+    padding: 1rem;
+}
+
+aside {
+    background-color: #ddd;
+    padding: 1rem;
+}
+
+footer {
+    background-color: #777;
+    color: white;
+    padding: 1rem;
+}
