@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    /* transition: background-color 0.8s ease-in-out, color 0.8s; */
+    transition: all 0.8s ease-in-out;
+}
+.btn:hover {
+    background-color: #0056b3;
+    color: chartreuse;
+    width: 400px;
+    border-radius: 50px;
+    opacity: 0.5;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
