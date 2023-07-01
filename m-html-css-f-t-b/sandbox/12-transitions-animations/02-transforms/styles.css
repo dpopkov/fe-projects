@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 60%;
+    transition: all 0.5s;
+}
+.logo:hover {
+    /* transform: rotate(-90deg); */
+    /* transform: translateX(200px); */
+    /* transform: translateY(100px); */
+    /* transform: translate(200px, 100px); */
+    /* transform: skew(30deg); */
+    /* transform: scale(0.5); */
+    transform: rotate(90deg) translateY(100px) scale(2);
+}
