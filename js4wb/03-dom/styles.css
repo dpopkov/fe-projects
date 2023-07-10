@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+:root {
+    --border-color: #aaa;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Top block above header */
+.buttons {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: khaki;
+    opacity: 0.8;
+    padding: 10px;
+}
+.buttons button {
+    margin: 3px 0;
+    padding: 3px 5px;
+}
+
+/* Header */
+header {
+    background-color: darkgreen;
+    color: white;
+    padding: 0.5rem 1rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.house {
+    margin: 1rem 3rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem 3rem;
+}
+
+img {
+    width: 100%;
+}
+
+.container h2 {
+    margin: 0.5rem 1rem;
+}
+
+.container .content-elements {
+    margin: 0.5rem 2rem;
+    line-height: 1.4;
+}
+
+p {
+    margin-top: 0.5rem;
+}
+
+p#interesting {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border-color);
+}
+
+p.special {
+    font-style: italic;
+}
+
+.sections {
+    background-color: rgb(171, 205, 206);
+    padding: 1rem 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.section-item {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    margin: 0.5rem;
+}
+
+ul > li > ul > li {
+    margin-left: 3rem;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: darkolivegreen;
+    color: white;
+}
+
+footer div:nth-of-type(1) {
+    flex: 1;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

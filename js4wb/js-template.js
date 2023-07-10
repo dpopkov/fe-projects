@@ -12,6 +12,4 @@ window.onerror = function(message, url, line) {
 init();
 function init() {
     console.log('Hello Template');
-    a = 12;
-    console.log(a);
 }

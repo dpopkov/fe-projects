@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="scripts/script.js"
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="buttons">
+      <button id="p-btn">Select Paragraphs</button>
+      <button id="id-btn">Select by ID</button>
+      <button id="class-btn">Select by Class</button>
+      <button id="decendants-btn">Select Decendants</button>
+      <button id="list-items-btn">Select 2nd list items</button>
+      <button id="capitalize-list-items-btn">Capitalize 2nd list items</button>
+      <button id="change-first-last-btn">Change first/last list items</button>
+      <button id="add-new-button">Add New Button</button>
+      <button id="insert-list-btn">Insert List</button>
+    </div>
+    <header>
+      <h1>DOM Sample</h1>
+    </header>
+    <main>
+      <div class="container">
+        <figure class="house">
+          <img src="images/house.png" alt="House" />
+          <figcaption>Caption</figcaption>
+        </figure>
+        <div class="main-content">
+          <h2>Main Content</h2>
+          <div class="content-elements">
+            <p id="interesting">This is interesting.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Doloremque quasi, natus corporis distinctio architecto quae
+              voluptas quisquam similique animi quos!
+            </p>
+            <p class="special">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+              accusamus, vel natus exercitationem fugiat quaerat!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              at consectetur numquam ea enim cum harum fuga.
+            </p>
+            <p class="special">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+              accusamus, vel natus exercitationem fugiat quaerat!
+            </p>
+          </div>
+        </div>
+        <div class="separate-content">
+          <h2>Separate</h2>
+          <div class="content-elements">
+            <div class="sections">
+              <p class="section-item">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam, odio?
+              </p>
+              <p class="section-item">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam, odio?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="children-content">
+          <h2>Children</h2>
+          <div class="content-elements">
+            <ul>
+              <li>Animals</li>
+              <li>Instruments</li>
+              <li>
+                Fruit
+                <ul>
+                  <li>Apple</li>
+                  <li>Banana</li>
+                  <li>Cherry</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>Copysomething</div>
+      <div>
+        <a href="#">Back to somewhere</a>
+      </div>
+    </footer>
+  </body>
+</html>
