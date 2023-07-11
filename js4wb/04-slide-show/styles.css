@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+:root {
+    --primary-color: darkgreen;
+    --border-color: #aaa;
+}
+
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+/* Main */
+#slides {
+    position: relative;
+    border: 4px solid #888;
+}
+#slides.running {
+    border-color: yellowgreen;
+}
+
+#slides img {
+    width: 100%;
+    /* width: 640px; */
+    /* height: 480px; */
+}
+
+#slides button#run-button {
+    padding: 0.5rem 2rem;
+    position: absolute;
+    bottom: 2.2em;
+    right: 1em;
+    opacity: 0.6;
+    transition: opacity 500ms;
+}
+#slides button#run-button:hover {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+footer div:nth-of-type(1) {
+    flex: 1;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
