@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="script.js"
+      defer
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Sample Form</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sample Form</h1>
+    </header>
+    <main>
+      <form id="contact" method="post">
+        <p>Enter your details:</p>
+        <fieldset>
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" value="Jane Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email-address"
+              value="jane@example.org"
+            />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value="General Enquiry"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message">This space ...</textarea>
+          </div>
+        </fieldset>
+        <p><button type="submit" name="send">Send Message</button></p>
+      </form>
+    </main>
+    <footer>
+      <div>Copysomething</div>
+      <div>
+        <a href="#">Back to somewhere</a>
+      </div>
+    </footer>
+  </body>
+</html>
