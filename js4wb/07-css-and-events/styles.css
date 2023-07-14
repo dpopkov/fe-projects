@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+:root {
+    --border-color: #aaa;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Top block above header */
+.buttons {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: khaki;
+    opacity: 0.8;
+    padding: 10px;
+}
+.buttons button {
+    margin: 3px 0;
+    padding: 3px 5px;
+}
+
+/* Header */
+header {
+    background-color: darkgreen;
+    color: white;
+    padding: 0.5rem 1rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+h1.different-color {
+    color: #dac1a4;
+}
+h1.different-background {
+    background-color: #587272;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.house {
+    margin: 1rem 3rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem 3rem;
+}
+
+img {
+    width: 100%;
+}
+
+/* Main */
+div.main-content {
+    background-color: burlywood;
+    padding: 1rem;
+}
+div.section-content {
+    padding: 0.5rem 2rem;
+}
+div.section-content p {
+    margin-top: 0.5rem;
+}
+
+
+/* Footer */
+footer {
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: darkolivegreen;
+    color: white;
+}
+
+footer div:nth-of-type(1) {
+    flex: 1;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
