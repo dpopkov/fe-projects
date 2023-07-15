@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #aaa; */
+}
+
+:root {
+    --primary-background-color: darkgreen;
+    --border-color: #aaa;
+}
+
+body {
+    font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-background-color);
+    color: white;
+    padding: 0.5rem 1rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+/* Main */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+section {
+    margin: 0.5rem 0;
+}
+
+ul {
+    margin-left: 1rem;
+}
+
+form {
+    padding: 0.7rem;
+    border: 1px solid var(--border-color);
+}
+
+form > p {
+    margin-bottom: 0.5rem;
+}
+
+form .buttons {
+    margin: 0.5rem 0;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+div#headings div.content {
+    /* display: none; */
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 250ms, opacity 1500ms;
+}
+div#headings h2.open + div.content {
+    /* display: block; */
+    max-height: 30em;
+    opacity: 1;
+}
+
+/* :has(ul) is not working in old Firefox! */
+ul#menu > li:has(ul) {
+    background-color: aquamarine;
+}
+ul#menu > li > ul {
+    display: none;
+}
+ul#menu > li > ul.openmenu {
+    display: block;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: var(--primary-background-color);
+    color: white;
+}
+
+footer div:nth-of-type(1) {
+    flex: 1;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
