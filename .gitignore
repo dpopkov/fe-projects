@@ -1,5 +1,6 @@
 *.wav
 *.png
+/**/.vscode/
 
 fontawesome.min.css
 all.min.css
