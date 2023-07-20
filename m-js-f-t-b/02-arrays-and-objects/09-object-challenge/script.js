@@ -1,7 +1,7 @@
 const library = [
     {
-        title: 'Core Java',
-        author: 'K.Horstmann',
+        title: 'Coree Java',
+        author: 'K.Horstmen',
         status: {
             own: true,
             reading: false,
@@ -9,7 +9,7 @@ const library = [
         }
     },
     {
-        title: 'React Quickly',
+        title: 'React Quicklie',
         author: 'J.Horst',
         status: {
             own: true,
@@ -18,7 +18,7 @@ const library = [
         }
     },
     {
-        title: 'CSS in Depth',
+        title: 'CSS in Dapth',
         author: 'C.Kormoon',
         status: {
             own: true,
