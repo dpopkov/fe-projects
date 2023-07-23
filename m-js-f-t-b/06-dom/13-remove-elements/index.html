@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>JS sandbox</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="app-title" class="title">Shopping List (Remove Elements)</h1>
+      </header>
+      <main>
+        <form id="item-form">
+          <div class="form-control">
+            <input
+              type="text"
+              id="item-input"
+              class="form-input"
+              placeholder="Enter Item"
+            />
+          </div>
+          <div class="form-control">
+            <button type="submit" class="btn">+ Add Item</button>
+          </div>
+        </form>
+
+        <div class="filter">
+          <input
+            type="text"
+            class="form-input-filter"
+            id="filter"
+            placeholder="Filter Items"
+          />
+        </div>
+
+        <ul id="item-list" class="items">
+          <li class="item">
+            Apples
+            <button class="remove-item btn-link">Remove</button>
+          </li>
+          <li class="item">
+            Orange Juice
+            <button class="remove-item btn-link">Remove</button>
+          </li>
+          <li class="item">
+            Oreos
+            <button class="remove-item btn-link">Remove</button>
+          </li>
+          <li class="item">
+            Milk
+            <button class="remove-item btn-link">Remove</button>
+          </li>
+        </ul>
+
+        <button id="btn-clear" class="btn-clear">Clear All</button>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

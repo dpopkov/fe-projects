@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid #aaa; */
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #595959;
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 1rem;
+}
+
+h1 {
+  padding: 1rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.child {
+  margin: 1rem 0.5rem;
+}
