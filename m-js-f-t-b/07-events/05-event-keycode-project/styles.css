@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid #ccc; */
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+  background-color: #eee;
+}
+
+:root {
+  --dark: #333;
+  --medium: #777;
+  --light: #ccc;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-output {
+  display: flex;
+  gap: 30px;
+}
+
+.key-output {
+  width: 180px;
+  text-align: center;
+}
+
+.attribute-name {
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-align: center;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.attribute-value {
+  background-color: white;
+  padding: 1.6rem;
+  min-height: 80px;
+  font-size: 1.3rem;
+  border: 1px solid #aaa;
+}
