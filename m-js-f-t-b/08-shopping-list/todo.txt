@@ -1,0 +1,12 @@
+Shopping List
+-------------
+
+Add items to list via form
+Remove items from list by clicking the Remove button
+Clear all items with Clear button
+Filter the items by typing in the Filter field
+All localStorage to persist items
+Click on an item to put into "edit mode" and add to form
+Update Item
+Deploy
+
