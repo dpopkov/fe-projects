@@ -79,7 +79,17 @@ function clearAllItems(e) {
   changeStylesForUiState(true);
 }
 
+function filterItems(e) {
+  const filterStr = e.target.value.trim().toLowerCase();
+  const items = itemList.querySelectorAll('li');
+  items.forEach((item) => {
+    const itemName = item.firstChild.textContent.toLowerCase();
+    item.style.display = itemName.includes(filterStr) ? 'flex' : 'none';
+  });
+}
+
 itemForm.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
 clearButton.addEventListener('click', clearAllItems);
+filter.addEventListener('input', filterItems);
 checkUI();
