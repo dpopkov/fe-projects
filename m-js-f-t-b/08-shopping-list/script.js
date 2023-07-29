@@ -7,7 +7,7 @@ const clearButton = document.getElementById('btn-clear');
 // ---------------
 // Event Listeners
 // ---------------
-function addItem(e) {
+function addItemSubmit(e) {
   e.preventDefault();
 
   const itemName = itemInput.value.trim();
@@ -16,9 +16,14 @@ function addItem(e) {
     alert('Please enter non-empty item name');
     return;
   }
-  itemList.insertAdjacentElement('beforeend', createItemListItem(itemName));
+  addItemToDOM(itemName);
+  addItemToStorage(itemName);
   itemInput.value = '';
   changeStylesForUiState();
+}
+
+function addItemToDOM(itemName) {
+  itemList.insertAdjacentElement('beforeend', createItemListItem(itemName));
 }
 
 function createItemListItem(itemName) {
@@ -26,6 +31,23 @@ function createItemListItem(itemName) {
   li.insertAdjacentText('afterbegin', itemName);
   li.insertAdjacentElement('beforeend', createRemoveBtn());
   return li;
+}
+
+function addItemToStorage(itemName) {
+  const items = getItemsFromStorage();
+  items.push(itemName);
+  localStorage.setItem('items', JSON.stringify(items));
+}
+
+function displayItemsFromStorage() {
+  const items = getItemsFromStorage();
+  items.forEach((item) => addItemToDOM(item));
+  checkUI();
+}
+
+function getItemsFromStorage() {
+  const itemsStr = localStorage.getItem('items');
+  return itemsStr ? JSON.parse(itemsStr) : [];
 }
 
 function createRemoveBtn() {
@@ -88,8 +110,13 @@ function filterItems(e) {
   });
 }
 
-itemForm.addEventListener('submit', addItem);
-itemList.addEventListener('click', removeItem);
-clearButton.addEventListener('click', clearAllItems);
-filter.addEventListener('input', filterItems);
-checkUI();
+// Initialize app
+function init() {
+  itemForm.addEventListener('submit', addItemSubmit);
+  itemList.addEventListener('click', removeItem);
+  clearButton.addEventListener('click', clearAllItems);
+  filter.addEventListener('input', filterItems);
+
+  document.addEventListener('DOMContentLoaded', displayItemsFromStorage);
+}
+init();
