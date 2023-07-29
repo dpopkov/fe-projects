@@ -3,6 +3,8 @@ const itemInput = document.getElementById('item-input');
 const itemList = document.getElementById('item-list');
 const filter = document.getElementById('filter');
 const clearButton = document.getElementById('btn-clear');
+let isEditMode = false;
+const formBtn = itemForm.querySelector('button');
 
 // ---------------
 // Event Listeners
@@ -16,10 +18,31 @@ function addItemSubmit(e) {
     alert('Please enter non-empty item name');
     return;
   }
-  addItemToDOM(itemName);
-  addItemToStorage(itemName);
+  if (isEditMode) {
+    const itemToEdit = itemList.querySelector('.edit-mode');
+    updateItem(itemToEdit, itemName);
+  } else {
+    if (checkIfItemExists(itemName)) {
+      alert('That item already exists');
+      return;
+    }
+    addItem(itemName);
+  }
   itemInput.value = '';
   changeStylesForUiState();
+}
+
+function updateItem(itemToEdit, itemNewName) {
+  const oldItemName = itemToEdit.firstChild.textContent.trim();
+  itemToEdit.firstChild.textContent = itemNewName;
+  removeItemFromStorage(oldItemName);
+  addItemToStorage(itemNewName);
+  setItemFromEdit(itemToEdit);
+}
+
+function addItem(itemName) {
+  addItemToDOM(itemName);
+  addItemToStorage(itemName);
 }
 
 function addItemToDOM(itemName) {
@@ -57,6 +80,11 @@ function createRemoveBtn() {
   return removeBtn;
 }
 
+function checkIfItemExists(itemName) {
+  const items = getItemsFromStorage();
+  return items.includes(itemName);
+}
+
 function onClickItem(e) {
   if (e.target.classList.contains('remove-item')) {
     const li =
@@ -64,7 +92,28 @@ function onClickItem(e) {
     if (li !== null && li.parentElement.classList.contains('items')) {
       removeItemElement(li);
     }
+  } else {
+    console.log('edit');
+    setItemToEdit(e.target);
   }
+}
+
+function setItemToEdit(itemElement) {
+  isEditMode = true;
+  itemList
+    .querySelectorAll('li')
+    .forEach((li) => li.classList.remove('edit-mode'));
+  itemElement.classList.add('edit-mode');
+  formBtn.classList.add('btn-edit-mode');
+  formBtn.textContent = 'Update Item';
+  itemInput.value = itemElement.firstChild.textContent.trim();
+}
+
+function setItemFromEdit(itemToEdit) {
+  isEditMode = false;
+  itemToEdit.classList.remove('edit-mode');
+  formBtn.classList.remove('btn-edit-mode');
+  formBtn.textContent = '+ Add Item';
 }
 
 function removeItemElement(element) {
@@ -133,7 +182,9 @@ function filterItems(e) {
   });
 }
 
+// --------------
 // Initialize app
+// --------------
 function init() {
   itemForm.addEventListener('submit', addItemSubmit);
   itemList.addEventListener('click', onClickItem);

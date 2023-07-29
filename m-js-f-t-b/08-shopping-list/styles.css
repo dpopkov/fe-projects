@@ -22,6 +22,10 @@ body {
   padding: 1rem;
 }
 
+.edit-mode {
+  color: #ccc;
+}
+
 /* Header */
 
 header {
@@ -48,6 +52,10 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.btn-edit-mode {
+  background-color: #228b22;
 }
 
 .btn-link {
