@@ -36,7 +36,7 @@ function createItemListItem(itemName) {
 function addItemToStorage(itemName) {
   const items = getItemsFromStorage();
   items.push(itemName);
-  localStorage.setItem('items', JSON.stringify(items));
+  saveItemsToLocalStorage(items);
 }
 
 function displayItemsFromStorage() {
@@ -57,21 +57,43 @@ function createRemoveBtn() {
   return removeBtn;
 }
 
-function removeItem(e) {
-  if (e.target.tagName === 'SPAN' && e.target.textContent === 'x') {
+function onClickItem(e) {
+  if (e.target.classList.contains('remove-item')) {
     const li =
       e.target.parentElement.tagName === 'LI' ? e.target.parentElement : null;
     if (li !== null && li.parentElement.classList.contains('items')) {
-      if (
-        confirm(
-          `Are you sure to remove "${li.firstChild.textContent.trim()}" item?`
-        )
-      ) {
-        li.remove();
-        checkUI();
-      }
+      removeItemElement(li);
     }
   }
+}
+
+function removeItemElement(element) {
+  if (
+    confirm(
+      `Are you sure to remove "${element.firstChild.textContent.trim()}" item?`
+    )
+  ) {
+    element.remove();
+    const itemName = element.firstChild.textContent.trim();
+    removeItemFromStorage(itemName);
+    checkUI();
+  }
+}
+
+function removeItemFromStorage(itemName) {
+  const items = getItemsFromStorage();
+  const itemsToSave = items.filter((name) => name !== itemName);
+  if (itemsToSave.length !== items.length) {
+    saveItemsToLocalStorage(itemsToSave);
+  }
+}
+
+function saveItemsToLocalStorage(items) {
+  localStorage.setItem('items', JSON.stringify(items));
+}
+
+function clearItemsInLocalStorage() {
+  localStorage.removeItem('items');
 }
 
 function checkUI() {
@@ -98,6 +120,7 @@ function clearAllItems(e) {
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
   }
+  clearItemsInLocalStorage();
   changeStylesForUiState(true);
 }
 
@@ -113,7 +136,7 @@ function filterItems(e) {
 // Initialize app
 function init() {
   itemForm.addEventListener('submit', addItemSubmit);
-  itemList.addEventListener('click', removeItem);
+  itemList.addEventListener('click', onClickItem);
   clearButton.addEventListener('click', clearAllItems);
   filter.addEventListener('input', filterItems);
 
