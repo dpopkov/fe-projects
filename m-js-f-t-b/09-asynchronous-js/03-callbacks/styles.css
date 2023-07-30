@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem;
+}
+
+button {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.danger {
+  background-color: red;
+}
+
+div#posts {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+div#posts div {
+  margin: 0.5rem;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

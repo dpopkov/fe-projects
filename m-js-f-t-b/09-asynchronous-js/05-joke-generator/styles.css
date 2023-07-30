@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid #aaa; */
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: mediumseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: white;
+  max-width: 400px;
+  max-height: 400px;
+  padding: 3rem;
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h3 {
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.joke {
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.7rem 2rem;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

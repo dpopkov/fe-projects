@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --dark: #333;
+  --medium: #777;
+  --light: #ccc;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Items */
+
+ul {
+  margin: 2rem;
+  list-style-type: none;
+}
+
+ul li {
+  padding: 0.4rem;
+}
