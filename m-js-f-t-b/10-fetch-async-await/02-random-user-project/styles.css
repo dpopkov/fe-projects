@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-fml {
+  background-color: darkorchid;
+}
+
+.background-ml {
+  background-color: dodgerblue;
+}
+
+.card {
+  /* width: 600px; */
+  padding: 1rem;
+  /* height: 300px; */
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0.7rem auto;
+}
+
+.card button {
+  background-color: black;
+  width: 100%;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.user {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-info {
+  text-align: start;
+}
+
+.info-row {
+  margin-bottom: 0.7rem;
+}
+
+.info-title {
+  font-weight: bold;
+}
