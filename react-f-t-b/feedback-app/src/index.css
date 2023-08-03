@@ -47,6 +47,11 @@ header {
   position: relative;
 }
 
+.card.reverse {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
 .rating li,
 .num-display {
   position: relative;
