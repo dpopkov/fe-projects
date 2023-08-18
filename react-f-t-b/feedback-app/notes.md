@@ -16,3 +16,6 @@
   - Create FeedbackForm with Card inside
   - Place it above FeedbackStats
   - Add `onChange={handleTextChange}` to form input element
+- Custom Button Component (it can be used all around the application)
+  - Create Button component
+  - Replace `<button>` in FeedbackForm with this new Button component
