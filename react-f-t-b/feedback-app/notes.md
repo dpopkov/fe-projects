@@ -19,3 +19,7 @@
 - Custom Button Component (it can be used all around the application)
   - Create Button component
   - Replace `<button>` in FeedbackForm with this new Button component
+- Real-Time validation
+  - Add state variables `btnDisabled` and `message` in FeedbackForm
+  - Pass btnDisabled into Button component
+  - Add text length validation to `handleTextChange` method
