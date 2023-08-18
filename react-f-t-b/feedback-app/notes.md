@@ -12,3 +12,7 @@
   - Create FeedbackStats
   - Place it above FeedbackList, pass global feedback into it
   - Calculate average rating using feedback array
+- Form Input and State
+  - Create FeedbackForm with Card inside
+  - Place it above FeedbackStats
+  - Add `onChange={handleTextChange}` to form input element
