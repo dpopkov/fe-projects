@@ -8,3 +8,7 @@
     - Add to FeedbackItem prop `handleDelete`
     - Add to FeedbackList prop `deleteFeedback` and pass it to FeedbackItem
     - Add to App function `deleteFeedback` and pass it to FeedbackList
+- Feedback Stats Component
+  - Create FeedbackStats
+  - Place it above FeedbackList, pass global feedback into it
+  - Calculate average rating using feedback array
