@@ -23,3 +23,10 @@
   - Add state variables `btnDisabled` and `message` in FeedbackForm
   - Pass btnDisabled into Button component
   - Add text length validation to `handleTextChange` method
+- Rating Select Component
+  - Create RatingSelect component
+  - Place it above text input
+  - Make RatingSelect return ul of radio buttons
+  - Implement `handleChange` in RatingSelect
+  - In FeedbackForm pass `setRating` as selectHandler to RatingSelect
+  - Use selectHandler in RatingSelect to set the new selected rating
