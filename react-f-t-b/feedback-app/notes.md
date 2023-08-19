@@ -30,3 +30,12 @@
   - Implement `handleChange` in RatingSelect
   - In FeedbackForm pass `setRating` as selectHandler to RatingSelect
   - Use selectHandler in RatingSelect to set the new selected rating
+- Add Feedback
+  - Add `onSubmit={handleSubmit}` to the form
+  - Implement handleSubmit
+  - Add function `addFeedback` to App to update global state
+  - Pass `addFeedback` to FeedbackForm
+  - Implement `addFeedback`, install uuid:
+    - `npm i uuid`
+    - change the type of id from number to string where needed
+  - Call `handleAdd` in submit handler
