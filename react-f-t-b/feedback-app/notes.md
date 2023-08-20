@@ -46,3 +46,4 @@
   - Place `Router`, `Routes` and `Route` containing element `AboutPage` in App.
   - Place `Route` containing element with the rest of components
   - Place `Route exact path="/"`
+- Get rid of React Router Future Flag Warnings (v7_starttransition, v7_relativesplatpath)

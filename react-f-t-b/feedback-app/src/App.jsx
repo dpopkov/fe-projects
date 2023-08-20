@@ -24,12 +24,16 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true, // Enables React's startTransition API
+        v7_relativeSplatPath: true, // Enables relative paths in nested routes
+      }}
+    >
       <Header />
       <div className="container">
         <Routes>
           <Route
-            exact
             path="/"
             element={
               <>
