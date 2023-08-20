@@ -185,6 +185,14 @@ input:focus {
   color: rebeccapurple;
 }
 
+.about h1 {
+  margin-bottom: 20px;
+}
+
+.about p {
+  margin: 10px 0;
+}
+
 @media (max-width: 600px) {
   .rating li {
     margin: 10px 3px;

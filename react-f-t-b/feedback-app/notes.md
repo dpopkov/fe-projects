@@ -39,3 +39,10 @@
     - `npm i uuid`
     - change the type of id from number to string where needed
   - Call `handleAdd` in submit handler
+- Creating Routes
+  - Install `npm i react-router-dom`
+  - Create AboutPage component and place it within App
+  - Import `BrowserRouter`, `Routes` and `Route` from `react-router-dom`
+  - Place `Router`, `Routes` and `Route` containing element `AboutPage` in App.
+  - Place `Route` containing element with the rest of components
+  - Place `Route exact path="/"`
