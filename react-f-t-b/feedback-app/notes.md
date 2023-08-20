@@ -1,53 +1,56 @@
 ## Notes
 
-- Events and Prop Drilling
-  - Install React Icons:
-    - `npm i react-icons`
-  - Add to Card button with `<FaTimes color="purple" />`
-  - Add to button `onClick={() => handleDelete(item.id)}`
-    - Add to FeedbackItem prop `handleDelete`
-    - Add to FeedbackList prop `deleteFeedback` and pass it to FeedbackItem
-    - Add to App function `deleteFeedback` and pass it to FeedbackList
-- Feedback Stats Component
-  - Create FeedbackStats
-  - Place it above FeedbackList, pass global feedback into it
-  - Calculate average rating using feedback array
-- Form Input and State
-  - Create FeedbackForm with Card inside
-  - Place it above FeedbackStats
-  - Add `onChange={handleTextChange}` to form input element
-- Custom Button Component (it can be used all around the application)
-  - Create Button component
-  - Replace `<button>` in FeedbackForm with this new Button component
-- Real-Time validation
-  - Add state variables `btnDisabled` and `message` in FeedbackForm
-  - Pass btnDisabled into Button component
-  - Add text length validation to `handleTextChange` method
-- Rating Select Component
-  - Create RatingSelect component
-  - Place it above text input
-  - Make RatingSelect return ul of radio buttons
-  - Implement `handleChange` in RatingSelect
-  - In FeedbackForm pass `setRating` as selectHandler to RatingSelect
-  - Use selectHandler in RatingSelect to set the new selected rating
-- Add Feedback
-  - Add `onSubmit={handleSubmit}` to the form
-  - Implement handleSubmit
-  - Add function `addFeedback` to App to update global state
-  - Pass `addFeedback` to FeedbackForm
-  - Implement `addFeedback`, install uuid:
-    - `npm i uuid`
-    - change the type of id from number to string where needed
-  - Call `handleAdd` in submit handler
-- Creating Routes
-  - Install `npm i react-router-dom`
-  - Create AboutPage component and place it within App
-  - Import `BrowserRouter`, `Routes` and `Route` from `react-router-dom`
-  - Place `Router`, `Routes` and `Route` containing element `AboutPage` in App.
-  - Place `Route` containing element with the rest of components
-  - Place `Route exact path="/"`
-- Get rid of React Router Future Flag Warnings (v7_starttransition, v7_relativesplatpath)
-- Creating Links
-  - Create AboutIconLink component
-  - Use Link component instead of a standard `<a>` tag
-    - Use simple Link or the variant with parameters (pathname, search, hash)
+- **Components, Props and State**
+  - Events and Prop Drilling
+    - Install React Icons:
+      - `npm i react-icons`
+    - Add to Card button with `<FaTimes color="purple" />`
+    - Add to button `onClick={() => handleDelete(item.id)}`
+      - Add to FeedbackItem prop `handleDelete`
+      - Add to FeedbackList prop `deleteFeedback` and pass it to FeedbackItem
+      - Add to App function `deleteFeedback` and pass it to FeedbackList
+  - Feedback Stats Component
+    - Create FeedbackStats
+    - Place it above FeedbackList, pass global feedback into it
+    - Calculate average rating using feedback array
+- **Forms and Validation**
+  - Form Input and State
+    - Create FeedbackForm with Card inside
+    - Place it above FeedbackStats
+    - Add `onChange={handleTextChange}` to form input element
+  - Custom Button Component (it can be used all around the application)
+    - Create Button component
+    - Replace `<button>` in FeedbackForm with this new Button component
+  - Real-Time validation
+    - Add state variables `btnDisabled` and `message` in FeedbackForm
+    - Pass btnDisabled into Button component
+    - Add text length validation to `handleTextChange` method
+  - Rating Select Component
+    - Create RatingSelect component
+    - Place it above text input
+    - Make RatingSelect return ul of radio buttons
+    - Implement `handleChange` in RatingSelect
+    - In FeedbackForm pass `setRating` as selectHandler to RatingSelect
+    - Use selectHandler in RatingSelect to set the new selected rating
+  - Add Feedback
+    - Add `onSubmit={handleSubmit}` to the form
+    - Implement handleSubmit
+    - Add function `addFeedback` to App to update global state
+    - Pass `addFeedback` to FeedbackForm
+    - Implement `addFeedback`, install uuid:
+      - `npm i uuid`
+      - change the type of id from number to string where needed
+    - Call `handleAdd` in submit handler
+- **Creating Routes and Links**
+  - Creating Routes
+    - Install `npm i react-router-dom`
+    - Create AboutPage component and place it within App
+    - Import `BrowserRouter`, `Routes` and `Route` from `react-router-dom`
+    - Place `Router`, `Routes` and `Route` containing element `AboutPage` in App.
+    - Place `Route` containing element with the rest of components
+    - Place `Route exact path="/"`
+  - Get rid of React Router Future Flag Warnings (v7_starttransition, v7_relativesplatpath)
+  - Creating Links
+    - Create AboutIconLink component
+    - Use Link component instead of a standard `<a>` tag
+      - Use simple Link or the variant with parameters (pathname, search, hash)
