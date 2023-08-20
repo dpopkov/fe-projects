@@ -54,3 +54,7 @@
     - Create AboutIconLink component
     - Use Link component instead of a standard `<a>` tag
       - Use simple Link or the variant with parameters (pathname, search, hash)
+- **Context API, useContext Hook**
+  - Create a Context and Provider
+    - Create FeedbackContext and FeedbackProvider
+    - Place FeedbackProvider into App and put all the elements inside it.

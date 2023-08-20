@@ -9,6 +9,7 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import AboutPage from './pages/AboutPage';
 import AboutIconLink from './components/AboutIconLink';
+import { FeedbackProvider } from './context/FeedbackContext';
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -25,34 +26,36 @@ function App() {
   };
 
   return (
-    <Router
-      future={{
-        v7_startTransition: true, // Enables React's startTransition API
-        v7_relativeSplatPath: true, // Enables relative paths in nested routes
-      }}
-    >
-      <Header />
-      <div className="container">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <FeedbackForm handleAdd={addFeedback} />
-                <FeedbackStats feedback={feedback} />
-                <FeedbackList
-                  feedback={feedback}
-                  deleteFeedback={deleteFeedback}
-                />
-                <AboutIconLink />
-              </>
-            }
-          />
+    <FeedbackProvider>
+      <Router
+        future={{
+          v7_startTransition: true, // Enables React's startTransition API
+          v7_relativeSplatPath: true, // Enables relative paths in nested routes
+        }}
+      >
+        <Header />
+        <div className="container">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <FeedbackForm handleAdd={addFeedback} />
+                  <FeedbackStats feedback={feedback} />
+                  <FeedbackList
+                    feedback={feedback}
+                    deleteFeedback={deleteFeedback}
+                  />
+                  <AboutIconLink />
+                </>
+              }
+            />
 
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </div>
-    </Router>
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </div>
+      </Router>
+    </FeedbackProvider>
   );
 }
 
