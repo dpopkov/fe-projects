@@ -63,3 +63,13 @@
     - Get rid of passing feedback to FeedbackList in App
     - Get feedback in FeedbackStats using `useContext(FeedbackContext)`
     - Get rid of passing feedback to FeedbackStats in App
+  - Moving functions to context
+    - Move Delete
+      - Move `deleteFeedback()` from App to FeedbackContext
+      - Remove deleteFeedback from FeedbackList
+      - Remove handleDelete from FeedbackItem
+      - In FeedbackItem get deleteFeedback from FeedbackContext
+    - Move Add
+      - Move `addFeedback() from App to FeedbackContext
+      - Remove handleAdd from FeedbackForm
+      - In FeedbackForm get addFeedback from FeedbackContext
