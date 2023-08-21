@@ -73,3 +73,8 @@
       - Move `addFeedback() from App to FeedbackContext
       - Remove handleAdd from FeedbackForm
       - In FeedbackForm get addFeedback from FeedbackContext
+  - Edit Feedback Event
+    - Add button Edit to FeedbackItem
+    - Add `feedbackEdit` state and `editFeedback()` function to context
+    - Get `editFeedback` in FeedbackItem using `useContext(FeedbackContext)`
+    - Handle onClick using `editFeedback`
