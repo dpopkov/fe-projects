@@ -58,3 +58,8 @@
   - Create a Context and Provider
     - Create FeedbackContext and FeedbackProvider
     - Place FeedbackProvider into App and put all the elements inside it.
+  - Get Global State with the useContext Hook
+    - Get feedback in FeedbackList using `useContext(FeedbackContext)`
+    - Get rid of passing feedback to FeedbackList in App
+    - Get feedback in FeedbackStats using `useContext(FeedbackContext)`
+    - Get rid of passing feedback to FeedbackStats in App
