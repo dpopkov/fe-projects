@@ -88,3 +88,9 @@
     - Add updating rating in RatingSelect component
       - import useContext, useEffect and FeedbackContext
       - call useEffect and setSelected rating
+  - Update Feedback Item
+    - Add function to context to update data - `updateFeedback()`
+    - Pass the function to FeedbackContext provider
+    - Implement `updateFeedback` using setFeedback and map
+    - Get updateFeedback to the form from the context
+    - Modify `handleSubmit` using edit condition
