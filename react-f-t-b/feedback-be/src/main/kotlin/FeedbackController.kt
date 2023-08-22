@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -18,7 +19,11 @@ class FeedbackController(
     private val log = LoggerFactory.getLogger(this::class.java)
 
     @GetMapping
-    fun getFeedbacks(): ResponseEntity<List<Feedback?>?> {
+    fun getFeedbacks(@RequestParam("sleep") sleep: Long?): ResponseEntity<List<Feedback?>?> {
+        if (sleep !== null) {
+            log.info("Wait ${sleep / 1000} seconds before getting all feedbacks...")
+            Thread.sleep(sleep)
+        }
         log.info("Get all feedbacks")
         var list = feedbackRepository.findAll().toList()
         return ResponseEntity.ok(list)
