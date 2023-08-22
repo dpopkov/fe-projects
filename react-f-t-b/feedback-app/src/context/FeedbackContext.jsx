@@ -12,6 +12,7 @@ export const FeedbackProvider = ({ children }) => {
   });
 
   const fetchFeedback = async () => {
+    // const resp = await fetch('http://localhost:8080/feedback?sleep=3000');
     const resp = await fetch('http://localhost:8080/feedback');
     const data = await resp.json();
     setFeedback(data);

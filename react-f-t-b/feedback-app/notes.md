@@ -101,3 +101,8 @@
     - Call useEffect with empty 2nd parameter
     - Implement `fetchFeedback()`
     - Add `isLoading` state
+  - Spinner Component
+    - Add spinner.gif to assets
+    - Get isLoading state from context in FeedbackList
+    - Create Spinner component
+    - Show it in FeedbackList when isLoading
