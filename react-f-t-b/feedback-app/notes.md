@@ -94,3 +94,10 @@
     - Implement `updateFeedback` using setFeedback and map
     - Get updateFeedback to the form from the context
     - Modify `handleSubmit` using edit condition
+- **APIs and HTTP Requests**
+  - Fetch Data from Server Backend
+    - Import useEffect to FeedbackContext
+    - Remove hardcoded feedback items
+    - Call useEffect with empty 2nd parameter
+    - Implement `fetchFeedback()`
+    - Add `isLoading` state
