@@ -78,3 +78,13 @@
     - Add `feedbackEdit` state and `editFeedback()` function to context
     - Get `editFeedback` in FeedbackItem using `useContext(FeedbackContext)`
     - Handle onClick using `editFeedback`
+  - Using feedbackEdit on FeedbackForm with useEffect
+    - Pass feedbackEdit state to FeedbackContext
+    - Import useEffect in FeedbackForm
+    - Call useEffect in FeedbackForm (a good way to make http request to get data from API when the page loads)
+      - leave 2nd parameter [] empty to run it once
+      - or pass a dependency - `feedbackEdit` - now every change in feedbackEdit makes this side effect
+    - Implement useEffect: set text and rating
+    - Add updating rating in RatingSelect component
+      - import useContext, useEffect and FeedbackContext
+      - call useEffect and setSelected rating
