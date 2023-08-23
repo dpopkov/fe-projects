@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -48,9 +49,32 @@ class FeedbackController(
         return ResponseEntity.ok(saved)
     }
 
+    @PutMapping("/{id}")
+    fun updateFeedback(@PathVariable("id") id: String, @RequestBody feedbackDto: FeedbackDto): Any {
+        log.info("Updating by id=$id")
+        val found = feedbackRepository.findById(id)
+        if (found.isPresent) {
+            val feedback = found.get()
+            feedback.rating = feedbackDto.rating
+            feedback.text = feedbackDto.text
+            val saved = feedbackRepository.save<Feedback>(feedback)
+            return ResponseEntity.ok(saved)
+        }  else {
+            log.info("Not found to update by id=$id")
+            return ResponseEntity.notFound().build<Feedback?>()
+        }
+    }
+
     @DeleteMapping("/{id}")
-    fun delete(@PathVariable("id") id: String) {
+    fun delete(@PathVariable("id") id: String): ResponseEntity<Feedback?> {
         log.info("Deleting by id=$id")
-        feedbackRepository.deleteById(id)
+        val found = feedbackRepository.findById(id)
+        if (found.isPresent) {
+            feedbackRepository.deleteById(id)
+            return ResponseEntity.of(found)
+        } else {
+            log.info("Not found to delete by id=$id")
+            return ResponseEntity.notFound().build<Feedback?>()
+        }
     }
 }
