@@ -11,9 +11,11 @@ export const FeedbackProvider = ({ children }) => {
     edit: false,
   });
 
+  const BASE_URL = 'http://localhost:8080/feedback';
+
   const fetchFeedback = async () => {
-    // const resp = await fetch('http://localhost:8080/feedback?sleep=3000');
-    const resp = await fetch('http://localhost:8080/feedback');
+    // const resp = await fetch(BASE_URL + '?sleep=1000');
+    const resp = await fetch(BASE_URL);
     const data = await resp.json();
     setFeedback(data);
     setIsLoading(false);
@@ -37,9 +39,19 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
-  const addFeedback = (newFeedback) => {
+  const addFeedback = async (newFeedback) => {
     newFeedback.id = uuidv4();
-    setFeedback([newFeedback, ...feedback]);
+
+    const resp = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newFeedback),
+    });
+    const data = await resp.json();
+
+    setFeedback([data, ...feedback]);
   };
 
   const updateFeedback = (id, updItem) => {

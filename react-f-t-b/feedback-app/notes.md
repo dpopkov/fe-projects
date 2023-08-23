@@ -106,3 +106,6 @@
     - Get isLoading state from context in FeedbackList
     - Create Spinner component
     - Show it in FeedbackList when isLoading
+  - Add Feedback and setting a proxy
+    - Add proxy `http://localhost:8080` to package.json - NOT WORKING!
+    - Modify `addFeedback()` to call fetch
