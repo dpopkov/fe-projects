@@ -33,9 +33,16 @@ export const FeedbackProvider = ({ children }) => {
     });
   };
 
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm('Are you sure you want to delete?')) {
-      setFeedback(feedback.filter((item) => item.id !== id));
+      const resp = await fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE',
+      });
+      if (resp.ok) {
+        setFeedback(feedback.filter((item) => item.id !== id));
+      } else {
+        console.err(`Error deleting by id=${id}`);
+      }
     }
   };
 
@@ -54,10 +61,21 @@ export const FeedbackProvider = ({ children }) => {
     setFeedback([data, ...feedback]);
   };
 
-  const updateFeedback = (id, updItem) => {
-    setFeedback(
-      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
-    );
+  const updateFeedback = async (id, updItem) => {
+    updItem.id = id;
+    const resp = await fetch(`${BASE_URL}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updItem),
+    });
+    if (resp.ok) {
+      const data = await resp.json();
+      setFeedback(feedback.map((item) => (item.id === id ? data : item)));
+    } else {
+      console.err(`Error updating by id=${id}`);
+    }
   };
 
   return (
