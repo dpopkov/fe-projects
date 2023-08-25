@@ -1,0 +1,77 @@
+:root {
+  --active-color: cornflowerblue;
+}
+
+.container {
+  background-color: lightcyan;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 480px;
+  max-width: 600px;
+  background-color: aliceblue;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.step {
+  background-color: lightgrey;
+  color: #333;
+  height: 2.4rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.step.active {
+  background-color: var(--active-color);
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  margin: 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttons button {
+  background-color: var(--active-color);
+  color: white;
+  font-size: inherit;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--active-color);
+}
