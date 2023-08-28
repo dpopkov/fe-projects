@@ -1,0 +1,22 @@
+.flashcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.flashcards li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: azure;
+  padding: 2rem;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.flashcards li.selected {
+  background-color: darkgreen;
+  color: white;
+}
