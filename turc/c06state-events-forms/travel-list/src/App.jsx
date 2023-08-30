@@ -56,10 +56,25 @@ const initialItems = [
 ];
 
 function PackingList({ items, onDeleteItem, onUpdatePacked }) {
+  const [sortBy, setSortBy] = useState('packed');
+
+  let sortedItems;
+  if (sortBy === 'input') {
+    sortedItems = items;
+  } else if (sortBy === 'description') {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
+  } else if (sortBy === 'packed') {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => Number(a.packed) - Number(b.packed));
+  }
+
   return (
     <div className="list">
       <ul>
-        {items.map((item) => (
+        {sortedItems.map((item) => (
           <Item
             key={item.id}
             item={item}
@@ -69,8 +84,10 @@ function PackingList({ items, onDeleteItem, onUpdatePacked }) {
         ))}
       </ul>
       <div className="actions">
-        <select name="sortby" id="">
-          <option value="byinput">Sort by input order</option>
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <option value="input">Sort by input order</option>
+          <option value="description">Sort by description</option>
+          <option value="packed">Sort by packed status</option>
         </select>
         <button>Clear List</button>
       </div>
