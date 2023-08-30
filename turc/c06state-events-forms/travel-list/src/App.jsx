@@ -55,7 +55,7 @@ const initialItems = [
   { id: 3, description: 'Book', quantity: 1, packed: true },
 ];
 
-function PackingList({ items, onDeleteItem, onUpdatePacked }) {
+function PackingList({ items, onDeleteItem, onUpdatePacked, onClearList }) {
   const [sortBy, setSortBy] = useState('packed');
 
   let sortedItems;
@@ -89,7 +89,7 @@ function PackingList({ items, onDeleteItem, onUpdatePacked }) {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
-        <button>Clear List</button>
+        <button onClick={onClearList}>Clear List</button>
       </div>
     </div>
   );
@@ -132,6 +132,12 @@ export default function App() {
     );
   }
 
+  function handleClearList() {
+    if (confirm('Are you sure to delete all items?')) {
+      setItems([]);
+    }
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -140,6 +146,7 @@ export default function App() {
         items={items}
         onDeleteItem={handleDelete}
         onUpdatePacked={handleUpdateItemPacked}
+        onClearList={handleClearList}
       />
       <Stats items={items} />
     </div>
