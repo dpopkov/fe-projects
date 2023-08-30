@@ -5,7 +5,7 @@ function Logo() {
   return <h1>Travel List</h1>;
 }
 
-function AddForm() {
+function AddForm({ onAddItems }) {
   const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState(1);
 
@@ -14,7 +14,7 @@ function AddForm() {
 
     if (!description) return;
     const newItem = { quantity, description, packed: false, id: Date.now() };
-    console.log('submit form, new item:', newItem);
+    onAddItems(newItem);
 
     resetControls();
   }
@@ -55,12 +55,17 @@ const initialItems = [
   { id: 3, description: 'Book', quantity: 1, packed: true },
 ];
 
-function PackingList() {
+function PackingList({ items, onDeleteItem, onUpdatePacked }) {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
-          <Item key={item.id} item={item} />
+        {items.map((item) => (
+          <Item
+            key={item.id}
+            item={item}
+            onDeleteItem={onDeleteItem}
+            onUpdatePacked={onUpdatePacked}
+          />
         ))}
       </ul>
       <div className="actions">
@@ -73,23 +78,52 @@ function PackingList() {
   );
 }
 
-function Item({ item }) {
+function Item({ item, onDeleteItem, onUpdatePacked }) {
+  function handlePacked(e) {
+    onUpdatePacked(item.id, e.target.checked);
+  }
+
   return (
     <li>
+      <input type="checkbox" checked={item.packed} onChange={handlePacked} />
       <span className={item.packed ? 'packed' : ''}>
         {item.quantity} {item.description}
       </span>
-      <button>&times;</button>
+      <button onClick={() => onDeleteItem(item.id)}>&times;</button>
     </li>
   );
 }
 
 export default function App() {
+  const [items, setItems] = useState(initialItems);
+
+  function handleAddItem(newItem) {
+    setItems((currentItems) => [...currentItems, newItem]);
+  }
+
+  function handleDelete(itemId) {
+    setItems((currentItems) =>
+      currentItems.filter((item) => item.id !== itemId)
+    );
+  }
+
+  function handleUpdateItemPacked(itemId, isPacked) {
+    setItems((currentItems) =>
+      currentItems.map((item) =>
+        item.id === itemId ? { ...item, packed: isPacked } : item
+      )
+    );
+  }
+
   return (
     <div className="app">
       <Logo />
-      <AddForm />
-      <PackingList />
+      <AddForm onAddItems={handleAddItem} />
+      <PackingList
+        items={items}
+        onDeleteItem={handleDelete}
+        onUpdatePacked={handleUpdateItemPacked}
+      />
       <Stats />
     </div>
   );
