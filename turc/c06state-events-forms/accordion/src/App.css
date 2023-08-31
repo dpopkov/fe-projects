@@ -1,0 +1,52 @@
+.accordion {
+  margin-top: 4rem;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item {
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid cadetblue;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ced4da;
+}
+
+.title,
+.icon {
+  font-size: 20px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-box {
+  grid-column: 2 / -1;
+  padding-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* OPEN STATE */
+.open {
+  border-top: 4px solid cadetblue;
+}
+
+.open .number,
+.open .title {
+  color: cadetblue;
+}
