@@ -5,3 +5,5 @@
 fontawesome.min.css
 all.min.css
 
+!img/*.png
+
