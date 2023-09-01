@@ -7,7 +7,7 @@ const messages = [
   'Invest your new income 🤑',
 ];
 
-export default function App() {
+export default function AppV1() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
