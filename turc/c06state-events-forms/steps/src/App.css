@@ -47,6 +47,20 @@ h3 {
   margin: 2rem;
 }
 
+.message {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.message h3 {
+  margin: 0.4rem;
+  text-transform: uppercase;
+}
+
+.message p {
+  font-weight: bold;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -61,6 +75,14 @@ h3 {
   border: none;
   border-radius: 1.2rem;
   cursor: pointer;
+}
+
+button span {
+  display: inline-block;
+  margin: 1px 2px;
+  border: 1px dotted blue;
+  border-radius: 5px;
+  padding: 1px 5px;
 }
 
 .close {

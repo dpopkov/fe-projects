@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import './App.css';
 
 const messages = [
@@ -32,7 +32,7 @@ export default function App() {
       {isOpen && (
         <div className="app">
           <Steps step={step} />
-          <Message step={step} />
+          <Message step={step}>{messages[step - 1]}</Message>
           <Buttons handlePrevious={handlePrevious} handleNext={handleNext} />
         </div>
       )}
@@ -57,19 +57,32 @@ function Step({ stepNumber, isActive }) {
   return <div className={isActive ? 'step active' : 'step'}>{stepNumber}</div>;
 }
 
-function Message({ step }) {
+function Message({ step, children }) {
   return (
-    <h3>
-      Step {step}: {messages[step - 1]}
-    </h3>
+    <div className="message">
+      <h3>Step {step}</h3>
+      <p>{children}</p>
+    </div>
   );
 }
 
 function Buttons({ handlePrevious, handleNext }) {
   return (
     <div className="buttons">
-      <button onClick={handlePrevious}>Previous</button>
-      <button onClick={handleNext}>Next</button>
+      <Button handleClick={handlePrevious}>
+        <span>&lt;&lt;</span>
+        <span>Previous</span>
+        <span>Step</span>
+      </Button>
+      <Button handleClick={handleNext}>
+        <span>Next</span>
+        <span>Step</span>
+        <span>&gt;&gt;</span>
+      </Button>
     </div>
   );
+}
+
+function Button({ handleClick, children }) {
+  return <button onClick={handleClick}>{children}</button>;
 }
