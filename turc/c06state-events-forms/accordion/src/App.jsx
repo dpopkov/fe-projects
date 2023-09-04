@@ -25,28 +25,54 @@ export default function App() {
 }
 
 function Accordion({ data }) {
+  const [currentOpen, setCurrentOpen] = useState(null);
+
+  function toggleOpen(num) {
+    setCurrentOpen(num === currentOpen ? null : num);
+  }
+
   return (
     <div className="accordion">
       {data.map((item, index) => (
-        <Item key={index} num={index + 1} item={item} />
+        <Item
+          key={index}
+          num={index + 1}
+          title={item.title}
+          currentOpen={currentOpen}
+          onClick={toggleOpen}
+        >
+          {item.text}
+        </Item>
       ))}
+      <Item
+        num={101}
+        title="Do not start here"
+        currentOpen={currentOpen}
+        onClick={toggleOpen}
+      >
+        <h4>This item is not in array</h4>
+        <ul>
+          <li>It can contain any html</li>
+          <li>It is used for testing purposes</li>
+        </ul>
+      </Item>
     </div>
   );
 }
 
-function Item({ num, item }) {
-  const [isOpen, setIsOpen] = useState(false);
+function Item({ num, title, currentOpen, onClick: handleClick, children }) {
+  const isOpen = num === currentOpen;
 
   return (
     <div
       className={`item ${isOpen ? 'open' : ''}`}
-      onClick={() => setIsOpen((v) => !v)}
+      onClick={() => handleClick(num)}
     >
       <div className="number">{num < 10 ? `0${num}` : num}</div>
-      <div className="title">{item.title}</div>
+      <div className="title">{title}</div>
       <div className="icon">{isOpen ? '-' : '+'}</div>
 
-      {isOpen && <div className="content-box">{item.text}</div>}
+      {isOpen && <div className="content-box">{children}</div>}
     </div>
   );
 }
