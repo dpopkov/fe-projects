@@ -6,6 +6,7 @@
 
 | Project                                                                                   | Screenshot                                                |
 | ----------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| [Eat and Split](turc/c06state-events-forms/eat-n-split) - lifting state up                | ![Eat and Split](img/turk_c06_p09_eat-n-split.png)        |
 | [Tip Calculator](turc/c06state-events-forms/tip-calculator) - lifting state up            | ![Tip Calculator](img/turk_c06_p08_tip-calculator.png)    |
 | [Steps v2](turc/c06state-events-forms/steps) - The children Prop Making a Reusable Button | ![Steps](img/turk_c06_p07_steps-2_s.png)                  |
 | [Accordion](turc/c06state-events-forms/accordion)                                         | ![Accordion](img/turk_c06_p06_accordion-1_s.png)          |
